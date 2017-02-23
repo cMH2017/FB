@@ -333,10 +333,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>27</ColumnNumber>
+      <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>8</CurrentLine>
+      <CurrentLine>19</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\trace\trace.c</PathWithFileName>
       <FilenameWithoutPath>trace.c</FilenameWithoutPath>
@@ -1709,14 +1709,14 @@
     <Orientation>3</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
-      <Size>41</Size>
+      <Size>36</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\trace\trace.c</Name>
-          <ColumnNumber>27</ColumnNumber>
+          <ColumnNumber>30</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>8</CurrentLine>
+          <CurrentLine>19</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\main.c</Name>
@@ -1733,7 +1733,7 @@
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>29</Size>
+      <Size>32</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
@@ -1745,14 +1745,14 @@
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>29</Size>
+      <Size>32</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\TRACE\TRACE.H</Name>
-          <ColumnNumber>16</ColumnNumber>
+          <ColumnNumber>2</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>7</CurrentLine>
+          <CurrentLine>5</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

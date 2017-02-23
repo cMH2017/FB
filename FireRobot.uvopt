@@ -1709,7 +1709,7 @@
     <Orientation>3</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
-      <Size>36</Size>
+      <Size>37</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
@@ -1733,7 +1733,7 @@
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>32</Size>
+      <Size>31</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
@@ -1745,7 +1745,7 @@
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>32</Size>
+      <Size>31</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
