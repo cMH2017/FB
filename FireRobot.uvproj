@@ -294,7 +294,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\motor;.\trace</IncludePath>
+              <IncludePath>.\motor;.\trace;.\fireSensor</IncludePath>
             </VariousControls>
           </C51>
           <Ax51>
@@ -385,6 +385,21 @@
               <FileName>trace.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\trace\trace.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>firesensor</GroupName>
+          <Files>
+            <File>
+              <FileName>firesensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fireSensor\firesensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>firesensor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\fireSensor\firesensor.h</FilePath>
             </File>
           </Files>
         </Group>

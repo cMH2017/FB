@@ -294,7 +294,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\motor</IncludePath>
+              <IncludePath>.\motor;.\trace</IncludePath>
             </VariousControls>
           </C51>
           <Ax51>
@@ -370,6 +370,21 @@
               <FileName>motor.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\motor\motor.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>trace</GroupName>
+          <Files>
+            <File>
+              <FileName>trace.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\trace\trace.h</FilePath>
+            </File>
+            <File>
+              <FileName>trace.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\trace\trace.c</FilePath>
             </File>
           </Files>
         </Group>

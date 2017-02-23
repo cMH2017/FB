@@ -1,10 +1,10 @@
-C51 COMPILER V9.01   MAIN                                                                  02/23/2017 16:52:32 PAGE 1   
+C51 COMPILER V9.01   MAIN                                                                  02/23/2017 22:54:02 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN .\hex\main.obj
-COMPILER INVOKED BY: D:\Keil_C51\C51\BIN\C51.EXE main.c BROWSE INCDIR(.\motor;.\trace) DEBUG OBJECTEXTEND OBJECT(.\hex\m
-                    -ain.obj)
+COMPILER INVOKED BY: D:\Keil_C51\C51\BIN\C51.EXE main.c BROWSE INCDIR(.\motor;.\trace;.\fireSensor) DEBUG OBJECTEXTEND O
+                    -BJECT(.\hex\main.obj)
 
 line level    source
 
@@ -29,7 +29,7 @@ line level    source
   19   2              }
   20   1      }
   21          
-  22          void Tim1(void) interrupt 3
+  22          void Tim1(void) interrupt 3                     //Á½¸öÂÖ×Ó
   23          {
   24   1              EA=0;
   25   1              motorInterrupt();

@@ -19,7 +19,7 @@ void main(void)
 	}
 }
 
-void Tim1(void) interrupt 3
+void Tim1(void) interrupt 3			//Á½¸öÂÖ×Ó
 {
  	EA=0;
 	motorInterrupt();
