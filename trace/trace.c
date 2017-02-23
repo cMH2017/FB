@@ -5,19 +5,19 @@ sbit qtiML=P0^5;
 sbit qtiL=P0^6;
 //uchar qtiVal=0X00;
 
-uchar readQTI(void)
-{
-  static volatile uchar atiVal=0X00;
-  atiVal|=qtiL;
-  atiVal<<=1;
-  atiVal|=qtiML;
-  atiVal<<=1;
-  atiVal|=qtiMR;
-  atiVal<<=1;
-  atiVal|=qtiR;
-  atiVal&=0X0F;
-  return atiVal;
-}
+//uchar readQTI(void)
+//{
+//  static volatile uchar atiVal=0X00;
+//  atiVal|=qtiL;
+//  atiVal<<=1;
+//  atiVal|=qtiML;
+//  atiVal<<=1;
+//  atiVal|=qtiMR;
+//  atiVal<<=1;
+//  atiVal|=qtiR;
+//  atiVal&=0X0F;
+//  return atiVal;
+//}
 
 void trace(void)
 {

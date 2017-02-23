@@ -263,7 +263,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>22</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>1</CurrentLine>
@@ -286,7 +286,7 @@
       <Focus>0</Focus>
       <ColumnNumber>12</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>31</TopLine>
+      <TopLine>32</TopLine>
       <CurrentLine>47</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\motor\motor.c</PathWithFileName>
@@ -333,10 +333,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>40</ColumnNumber>
+      <ColumnNumber>27</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>23</TopLine>
-      <CurrentLine>23</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>8</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\trace\trace.c</PathWithFileName>
       <FilenameWithoutPath>trace.c</FilenameWithoutPath>
@@ -1707,20 +1707,20 @@
 
   <MDIGroups>
     <Orientation>3</Orientation>
-    <ActiveMDIGroup>2</ActiveMDIGroup>
+    <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
-      <Size>61</Size>
-      <ActiveTab>1</ActiveTab>
+      <Size>41</Size>
+      <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\trace\trace.c</Name>
-          <ColumnNumber>40</ColumnNumber>
-          <TopLine>23</TopLine>
-          <CurrentLine>23</CurrentLine>
+          <ColumnNumber>27</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>8</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\main.c</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <ColumnNumber>22</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>1</CurrentLine>
         </Doc>
@@ -1733,26 +1733,26 @@
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>19</Size>
+      <Size>29</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\motor\motor.c</Name>
           <ColumnNumber>12</ColumnNumber>
-          <TopLine>31</TopLine>
+          <TopLine>32</TopLine>
           <CurrentLine>47</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>19</Size>
+      <Size>29</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\TRACE\TRACE.H</Name>
-          <ColumnNumber>8</ColumnNumber>
+          <ColumnNumber>16</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>8</CurrentLine>
+          <CurrentLine>7</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
