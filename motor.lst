@@ -1,0 +1,133 @@
+C51 COMPILER V9.01   MOTOR                                                                 02/22/2017 20:43:41 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MOTOR
+OBJECT MODULE PLACED IN .\hex\motor.obj
+COMPILER INVOKED BY: D:\Keil_C51\C51\BIN\C51.EXE motor\motor.c BROWSE INCDIR(.\motor;.\trace) DEBUG OBJECTEXTEND PRINT(.
+                    -\motor.lst) OBJECT(.\hex\motor.obj)
+
+line level    source
+
+   1          #include"motor.h"
+   2          sbit Rmotor=P1^0;
+   3          sbit Lmotor=P1^1;
+   4          
+   5          uint leftPWM=MID_POINT;
+   6          uint rightPWM=MID_POINT;
+   7          uint step=25;
+   8          bit motorFlag=LEFT_MOTOR;
+   9          bit isPwmHigh=0;
+  10          bit isMotorRun=0;
+  11          
+  12          void initMotor(void)
+  13          {
+  14   1       TMOD&=0X0F;            
+  15   1       TMOD|=0X10;            //16位定时器
+  16   1       TR1=1;
+  17   1       ET1=1;
+  18   1       EA=1;
+  19   1       Rmotor=0;
+  20   1       Lmotor=0;
+  21   1      }
+  22          
+  23          void shutDownMotor(void)
+  24          {
+  25   1       leftPWM=MID_POINT;
+  26   1       rightPWM=MID_POINT;
+  27   1       isMotorRun=1;
+  28   1       while(isMotorRun);                     //等待舵机周期完成
+  29   1       TR0=0;
+  30   1       ET0=0;
+  31   1       Rmotor=0;
+  32   1       Lmotor=0;
+  33   1      }
+  34          
+  35          void motorAction(char pos,char speed)
+  36          {
+  37   1        switch(speed)
+  38   1        {
+  39   2          case 0:step=10;break;
+  40   2              case 1:step=25;break;
+  41   2              case 2:step=50;break;
+  42   2              case 3:step=125;break;
+  43   2              default:step=25;
+  44   2        }
+  45   1        switch(pos)
+  46   1        {
+  47   2              case STOP:              leftPWM=MID_POINT;                                      rightPWM=MID_POINT;break;
+  48   2              case FORWARD:   leftPWM=MID_POINT-(step+SETOFFL);       rightPWM=MID_POINT+step;break;
+  49   2              case BACKWARD:  leftPWM=MID_POINT+(step+2*SETOFFL);     rightPWM=MID_POINT-(step-SETOFFR);break;
+  50   2              case LEFT:              leftPWM=MID_POINT;                                      rightPWM=MID_POINT+step;break;
+  51   2              case RIGHT:             leftPWM=MID_POINT-step;                         rightPWM=MID_POINT;break;
+  52   2              case CCW:               leftPWM=MID_POINT+step;                         rightPWM=MID_POINT+step;break;
+  53   2              case CW:                leftPWM=MID_POINT-step;                         rightPWM=MID_POINT-step;break;
+  54   2              default:                leftPWM=MID_POINT;                                      rightPWM=MID_POINT;break;
+C51 COMPILER V9.01   MOTOR                                                                 02/22/2017 20:43:41 PAGE 2   
+
+  55   2        }
+  56   1      }
+  57          
+  58          void motorInterrupt(void)
+  59          {
+  60   1       if(motorFlag==LEFT_MOTOR)
+  61   1       {
+  62   2         if(isPwmHigh==0)
+  63   2         {
+  64   3               Lmotor=1; 
+  65   3               isPwmHigh=1;
+  66   3               /*定时器计时x1时间*/
+  67   3               TH1=leftPWM/256;
+  68   3               TL1=leftPWM%256;//leftPWM%256;
+  69   3      
+  70   3         }
+  71   2         else
+  72   2         {
+  73   3               isPwmHigh=0;
+  74   3               Lmotor=0;
+  75   3               /*定时器计时y1时间*/                   //x1+y1=10ms
+  76   3               TH1=(65536-leftPWM+CYCLE)/256;//(9174-leftPWM)/256;
+  77   3               TL1=(65536-leftPWM+CYCLE)%256;//(9174-leftPWM)%256;
+  78   3               motorFlag=RIGHT_MOTOR;
+  79   3               isMotorRun=1;
+  80   3         }
+  81   2       }
+  82   1       else
+  83   1       {
+  84   2               if(isPwmHigh==0)
+  85   2               {
+  86   3                 Rmotor=1;
+  87   3                 isPwmHigh=1;
+  88   3                 /*定时器延时x2时间*/
+  89   3                 TH1=rightPWM/256;//rightPWM/256;
+  90   3                 TL1=rightPWM%256;//rightPWM%256;
+  91   3                 
+  92   3               }
+  93   2               else
+  94   2               {
+  95   3                 Rmotor=0;
+  96   3                 isPwmHigh=0;
+  97   3                 /*定时器计时y2时间*/                 //x2+y2=10ms
+  98   3                 TH1=(65536-rightPWM+CYCLE)/256;//(9174-rightPWM)/256;
+  99   3                 TL1=(65536-rightPWM+CYCLE)%256;//(9174-rightPWM)%256;
+ 100   3                 motorFlag=LEFT_MOTOR;
+ 101   3                 isMotorRun=0;
+ 102   3               }
+ 103   2       }
+ 104   1      }
+ 105          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    443    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      3    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.01   MOTOR                                                                 02/22/2017 20:43:41 PAGE 3   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

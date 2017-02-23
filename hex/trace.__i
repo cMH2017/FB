@@ -1,0 +1,1 @@
+"trace\trace.c" BROWSE INCDIR(.\motor;.\trace) DEBUG OBJECTEXTEND PRINT(.\trace.lst) OBJECT(.\hex\trace.obj)

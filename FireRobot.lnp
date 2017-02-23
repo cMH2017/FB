@@ -1,0 +1,5 @@
+"STARTUP.obj",
+"main.obj",
+"motor.obj" 
+TO "FireRobot" 
+RAMSIZE(256) 

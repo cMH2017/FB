@@ -1,0 +1,6 @@
+".\hex\STARTUP.obj",
+".\hex\main.obj",
+".\hex\motor.obj",
+".\hex\trace.obj" 
+TO ".\hex\FireRobot" 
+PRINT(".\FireRobot.m51") RAMSIZE(256) 
