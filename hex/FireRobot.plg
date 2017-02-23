@@ -3,16 +3,7 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\admin\Desktop\FireRobot\FireRobot.uvproj
+C:\Users\admin\Desktop\FB\FireRobot.uvproj
 Project File Date:  02/22/2017
 
 <h2>Output:</h2>
-Build target 'Target 1'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHUTDOWNMOTOR?MOTOR
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?READQTI?TRACE
-Program Size: data=16.3 xdata=0 code=1123
-creating hex file from ".\hex\FireRobot"...
-".\hex\FireRobot" - 0 Error(s), 2 Warning(s).
