@@ -263,10 +263,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>40</ColumnNumber>
+      <ColumnNumber>1</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>22</CurrentLine>
+      <TopLine>34</TopLine>
+      <CurrentLine>34</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -284,7 +284,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>12</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>1</CurrentLine>
@@ -354,10 +354,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>26</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>2</TopLine>
+      <CurrentLine>13</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\fireSensor\firesensor.c</PathWithFileName>
       <FilenameWithoutPath>firesensor.c</FilenameWithoutPath>
@@ -1744,14 +1744,20 @@
     <Orientation>3</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
-      <Size>49</Size>
+      <Size>66</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
+          <Name>.\main.c</Name>
+          <ColumnNumber>1</ColumnNumber>
+          <TopLine>34</TopLine>
+          <CurrentLine>34</CurrentLine>
+        </Doc>
+        <Doc>
           <Name>.\fireSensor\firesensor.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <ColumnNumber>26</ColumnNumber>
+          <TopLine>2</TopLine>
+          <CurrentLine>13</CurrentLine>
         </Doc>
         <Doc>
           <Name>D:\KEIL_C51\C51\INC\REG52.H</Name>
@@ -1765,27 +1771,21 @@
           <TopLine>1</TopLine>
           <CurrentLine>10</CurrentLine>
         </Doc>
-        <Doc>
-          <Name>.\main.c</Name>
-          <ColumnNumber>40</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>22</CurrentLine>
-        </Doc>
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>51</Size>
-      <ActiveTab>0</ActiveTab>
+      <Size>34</Size>
+      <ActiveTab>1</ActiveTab>
       <Documents>
         <Doc>
-          <Name>.\fireSensor\firesensor.h</Name>
-          <ColumnNumber>20</ColumnNumber>
+          <Name>.\FIRESENSOR\FIRESENSOR.H</Name>
+          <ColumnNumber>18</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>5</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\motor\motor.c</Name>
-          <ColumnNumber>12</ColumnNumber>
+          <ColumnNumber>0</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>1</CurrentLine>
         </Doc>

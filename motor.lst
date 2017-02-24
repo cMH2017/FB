@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   MOTOR                                                                 02/23/2017 22:54:02 PAGE 1   
+C51 COMPILER V9.01   MOTOR                                                                 02/24/2017 16:56:31 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE MOTOR
@@ -19,7 +19,7 @@ line level    source
    9          bit isPwmHigh=0;
   10          bit isMotorRun=0;
   11          
-  12          void initMotor(void)
+  12          void initWheelMotor(void)
   13          {
   14   1       TMOD&=0X0F;            
   15   1       TMOD|=0X10;            //16Î»¶¨Ê±Æ÷
@@ -62,12 +62,12 @@ line level    source
   52   2              case CCW:               leftPWM=MID_POINT+step;                         rightPWM=MID_POINT+step;break;
   53   2              case CW:                leftPWM=MID_POINT-step;                         rightPWM=MID_POINT-step;break;
   54   2              default:                leftPWM=MID_POINT;                                      rightPWM=MID_POINT;break;
-C51 COMPILER V9.01   MOTOR                                                                 02/23/2017 22:54:02 PAGE 2   
+C51 COMPILER V9.01   MOTOR                                                                 02/24/2017 16:56:31 PAGE 2   
 
   55   2        }
   56   1      }
   57          
-  58          void motorInterrupt(void)
+  58          void wheelMotorInterrupt(void)
   59          {
   60   1       if(motorFlag==LEFT_MOTOR)
   61   1       {
@@ -127,7 +127,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    BIT SIZE         =      3    ----
 END OF MODULE INFORMATION.
 
-C51 COMPILER V9.01   MOTOR                                                                 02/23/2017 22:54:02 PAGE 3   
+C51 COMPILER V9.01   MOTOR                                                                 02/24/2017 16:56:31 PAGE 3   
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

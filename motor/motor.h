@@ -23,7 +23,7 @@
 void initMotor(void);
 void shutDownMotor(void);
 void motorAction(char pos,char speed);
-void motorInterrupt(void);
+void wheelMotorInterrupt(void);
 
 
 #endif

@@ -354,10 +354,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>42</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>12</TopLine>
-      <CurrentLine>21</CurrentLine>
+      <TopLine>2</TopLine>
+      <CurrentLine>13</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\fireSensor\firesensor.c</PathWithFileName>
       <FilenameWithoutPath>firesensor.c</FilenameWithoutPath>
@@ -1744,14 +1744,14 @@
     <Orientation>3</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
-      <Size>49</Size>
+      <Size>55</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\fireSensor\firesensor.c</Name>
-          <ColumnNumber>42</ColumnNumber>
-          <TopLine>12</TopLine>
-          <CurrentLine>21</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>2</TopLine>
+          <CurrentLine>13</CurrentLine>
         </Doc>
         <Doc>
           <Name>D:\KEIL_C51\C51\INC\REG52.H</Name>
@@ -1774,12 +1774,12 @@
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>51</Size>
+      <Size>45</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
-          <Name>FIRESENSOR\FIRESENSOR.H</Name>
-          <ColumnNumber>20</ColumnNumber>
+          <Name>.\FIRESENSOR\FIRESENSOR.H</Name>
+          <ColumnNumber>18</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>5</CurrentLine>
         </Doc>

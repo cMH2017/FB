@@ -10,56 +10,72 @@ Project File Date:  02/23/2017
 Build target 'Target 1'
 compiling main.c...
 compiling firesensor.c...
-FIRESENSOR\FIRESENSOR.C(30): error C202: 'ANGLE_BASE': undefined identifier
-Target not created
-Build target 'Target 1'
-compiling firesensor.c...
-FIRESENSOR\FIRESENSOR.C(35): warning C291: not every exit path returns a value
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?SHUTDOWNMOTOR?MOTOR
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?INITANGLEMOTOR?FIRESENSOR
+    SEGMENT: ?PR?TRACE?TRACE
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CHECKFIRE?FIRESENSOR
-Program Size: data=20.3 xdata=0 code=1130
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANGLEMOTORINTERRUPT?FIRESENSOR
+Program Size: data=34.5 xdata=0 code=1461
 creating hex file from ".\hex\FireRobot"...
 ".\hex\FireRobot" - 0 Error(s), 4 Warning(s).
 Build target 'Target 1'
 compiling firesensor.c...
-FIRESENSOR\FIRESENSOR.C(28): error C141: syntax error near 'for'
-Target not created
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUTDOWNMOTOR?MOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TRACE?TRACE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHECKFIRE?FIRESENSOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANGLEMOTORINTERRUPT?FIRESENSOR
+Program Size: data=34.5 xdata=0 code=1461
+creating hex file from ".\hex\FireRobot"...
+".\hex\FireRobot" - 0 Error(s), 4 Warning(s).
 Build target 'Target 1'
-compiling firesensor.c...
-FIRESENSOR\FIRESENSOR.C(28): error C141: syntax error near 'for'
-Target not created
-Build target 'Target 1'
-assembling STARTUP.A51...
 compiling main.c...
-compiling motor.c...
-compiling trace.c...
-compiling firesensor.c...
-FIRESENSOR\FIRESENSOR.C(37): warning C291: not every exit path returns a value
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?SHUTDOWNMOTOR?MOTOR
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?INITANGLEMOTOR?FIRESENSOR
+    SEGMENT: ?PR?TRACE?TRACE
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CHECKFIRE?FIRESENSOR
-Program Size: data=20.3 xdata=0 code=1132
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANGLEMOTORINTERRUPT?FIRESENSOR
+Program Size: data=34.5 xdata=0 code=1461
 creating hex file from ".\hex\FireRobot"...
 ".\hex\FireRobot" - 0 Error(s), 4 Warning(s).
 Build target 'Target 1'
-compiling firesensor.c...
-FIRESENSOR\FIRESENSOR.C(37): warning C291: not every exit path returns a value
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?SHUTDOWNMOTOR?MOTOR
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?INITANGLEMOTOR?FIRESENSOR
+    SEGMENT: ?PR?TRACE?TRACE
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CHECKFIRE?FIRESENSOR
-Program Size: data=20.3 xdata=0 code=1132
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANGLEMOTORINTERRUPT?FIRESENSOR
+Program Size: data=34.5 xdata=0 code=1461
 creating hex file from ".\hex\FireRobot"...
 ".\hex\FireRobot" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITWHEELMOTOR?MOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUTDOWNMOTOR?MOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TRACE?TRACE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHECKFIRE?FIRESENSOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANGLEMOTORINTERRUPT?FIRESENSOR
+Program Size: data=34.5 xdata=0 code=1458
+creating hex file from ".\hex\FireRobot"...
+".\hex\FireRobot" - 0 Error(s), 5 Warning(s).

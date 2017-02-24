@@ -9,7 +9,7 @@ bit motorFlag=LEFT_MOTOR;
 bit isPwmHigh=0;
 bit isMotorRun=0;
 
-void initMotor(void)
+void initWheelMotor(void)
 {
  TMOD&=0X0F; 		
  TMOD|=0X10;		//16Î»¶¨Ê±Æ÷
@@ -55,7 +55,7 @@ void motorAction(char pos,char speed)
   }
 }
 
-void motorInterrupt(void)
+void wheelMotorInterrupt(void)
 {
  if(motorFlag==LEFT_MOTOR)
  {
