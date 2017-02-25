@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        02/24/2017  17:46:33  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/25/2017  11:07:58  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -28,16 +28,15 @@ LINK MAP OF MODULE:  .\hex\FireRobot (?C_STARTUP)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     000FH     UNIT         ?DT?FIRESENSOR
-            DATA    0017H     0006H     UNIT         ?DT?MOTOR
-            DATA    001DH     0002H     UNIT         ?DT?MAIN
-                    001FH     0001H                  *** GAP ***
+            DATA    0008H     0010H     UNIT         ?DT?FIRESENSOR
+            DATA    0018H     0006H     UNIT         ?DT?MOTOR
+                    001EH     0002H                  *** GAP ***
             BIT     0020H.0   0000H.3   UNIT         ?BI?MOTOR
             BIT     0020H.3   0000H.1   UNIT         ?BI?MAIN
-            BIT     0020H.4   0000H.1   UNIT         ?BI?_ANGLEMOTORINTERRUPT?FIRESENSOR
-                    0020H.5   0000H.3                *** GAP ***
-            DATA    0021H     0002H     UNIT         ?DT?_ANGLEMOTORINTERRUPT?FIRESENSOR
-            IDATA   0023H     0001H     UNIT         ?STACK
+                    0020H.4   0000H.4                *** GAP ***
+            DATA    0021H     0004H     UNIT         _DATA_GROUP_
+            DATA    0025H     0003H     UNIT         ?DT?MAIN
+            IDATA   0028H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
@@ -46,43 +45,51 @@ LINK MAP OF MODULE:  .\hex\FireRobot (?C_STARTUP)
             CODE    000EH     000DH     UNIT         ?PR?INITANGLEMOTOR?FIRESENSOR
             CODE    001BH     0003H     ABSOLUTE     
             CODE    001EH     00CEH     UNIT         ?C?LIB_CODE
-            CODE    00ECH     00CAH     UNIT         ?PR?TIM0FORANGLEMOTOR?MAIN
-            CODE    01B6H     00C9H     UNIT         ?PR?_MOTORACTION?MOTOR
-            CODE    027FH     00C7H     UNIT         ?PR?WHEELMOTORINTERRUPT?MOTOR
-            CODE    0346H     008CH     UNIT         ?C_C51STARTUP
-            CODE    03D2H     0052H     UNIT         ?PR?TRACE?TRACE
-            CODE    0424H     004DH     UNIT         ?PR?_ANGLEMOTORINTERRUPT?FIRESENSOR
-            CODE    0471H     0044H     UNIT         ?C?LDIV
-            CODE    04B5H     0043H     UNIT         ?PR?CHECKFIRE?FIRESENSOR
-            CODE    04F8H     003FH     UNIT         ?PR?TIM1FORWHEEL?MAIN
-            CODE    0537H     0021H     UNIT         ?C_INITSEG
-            CODE    0558H     001EH     UNIT         ?PR?_DELAYMS?MAIN
-            CODE    0576H     001AH     UNIT         ?PR?SHUTDOWNMOTOR?MOTOR
-            CODE    0590H     0019H     UNIT         ?PR?MAIN?MAIN
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2017  17:46:33  PAGE 2
+            CODE    00ECH     00C9H     UNIT         ?PR?_MOTORACTION?MOTOR
+            CODE    01B5H     00C7H     UNIT         ?PR?WHEELMOTORINTERRUPT?MOTOR
+            CODE    027CH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0308H     0058H     UNIT         ?PR?CHECKFIRE?FIRESENSOR
+            CODE    0360H     0052H     UNIT         ?PR?TRACE?TRACE
+            CODE    03B2H     0044H     UNIT         ?C?LDIV
+            CODE    03F6H     003FH     UNIT         ?PR?TIM1FORWHEEL?MAIN
+            CODE    0435H     0039H     UNIT         ?PR?TIM0FORANGLEMOTOR?MAIN
+            CODE    046EH     0034H     UNIT         ?PR?MAIN?MAIN
+            CODE    04A2H     002BH     UNIT         ?C_INITSEG
+            CODE    04CDH     001EH     UNIT         ?PR?_DELAYMS?MAIN
+            CODE    04EBH     001AH     UNIT         ?PR?SHUTDOWNMOTOR?MOTOR
+            CODE    0505H     0011H     UNIT         ?PR?INITWHEELMOTOR?MOTOR
 
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2017  11:07:58  PAGE 2
 
-            CODE    05A9H     0011H     UNIT         ?PR?INITWHEELMOTOR?MOTOR
 
 
 
 OVERLAY MAP OF MODULE:   .\hex\FireRobot (?C_STARTUP)
 
 
-SEGMENT
-  +--> CALLED SEGMENT
----------------------
-?C_C51STARTUP
+SEGMENT                                 DATA_GROUP 
+  +--> CALLED SEGMENT                 START    LENGTH
+-----------------------------------------------------
+?C_C51STARTUP                         -----    -----
   +--> ?PR?MAIN?MAIN
   +--> ?C_INITSEG
 
-?PR?MAIN?MAIN
+?PR?MAIN?MAIN                         -----    -----
+  +--> ?PR?INITWHEELMOTOR?MOTOR
   +--> ?PR?_DELAYMS?MAIN
   +--> ?PR?INITANGLEMOTOR?FIRESENSOR
+  +--> ?PR?CHECKFIRE?FIRESENSOR
+  +--> ?PR?TRACE?TRACE
+
+?PR?CHECKFIRE?FIRESENSOR              0021H    0004H
+  +--> ?PR?_MOTORACTION?MOTOR
+
+?PR?TRACE?TRACE                       -----    -----
+  +--> ?PR?_MOTORACTION?MOTOR
 
 *** NEW ROOT ***************************************************
 
-?PR?TIM1FORWHEEL?MAIN
+?PR?TIM1FORWHEEL?MAIN                 -----    -----
   +--> ?PR?WHEELMOTORINTERRUPT?MOTOR
 
 
@@ -93,8 +100,8 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   ----------------------------------
 
   -------         MODULE        ?C_STARTUP
-  C:0346H         SEGMENT       ?C_C51STARTUP
-  I:0023H         SEGMENT       ?STACK
+  C:027CH         SEGMENT       ?C_C51STARTUP
+  I:0028H         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
@@ -103,7 +110,7 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:0349H         SYMBOL        IDATALOOP
+  C:027FH         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -112,21 +119,21 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:0346H         SYMBOL        STARTUP1
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2017  11:07:58  PAGE 3
+
+
+  C:027CH         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:0346H         LINE#         133
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2017  17:46:33  PAGE 3
-
-
-  C:0348H         LINE#         134
-  C:0349H         LINE#         135
-  C:034AH         LINE#         136
-  C:034CH         LINE#         185
-  C:034FH         LINE#         196
+  C:027CH         LINE#         133
+  C:027EH         LINE#         134
+  C:027FH         LINE#         135
+  C:0280H         LINE#         136
+  C:0282H         LINE#         185
+  C:0285H         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        MAIN
@@ -135,20 +142,22 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
   B:00A8H.7       PUBLIC        EA
-  D:001DH         PUBLIC        angle
+  D:0025H         PUBLIC        angle
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:04F8H         PUBLIC        Tim1forWheel
+  C:03F6H         PUBLIC        Tim1forWheel
   B:0090H.2       PUBLIC        angleMotor
-  C:00ECH         PUBLIC        Tim0forAngleMotor
-  C:0590H         PUBLIC        main
+  C:0435H         PUBLIC        Tim0forAngleMotor
+  C:046EH         PUBLIC        main
+  D:0027H         PUBLIC        angleMotorCount
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   D:008CH         PUBLIC        TH0
   D:008AH         PUBLIC        TL0
   B:0020H.3       PUBLIC        pwmFlag
+  B:0088H.4       PUBLIC        TR0
   D:00C8H         PUBLIC        T2CON
-  C:0558H         PUBLIC        _delayms
+  C:04CDH         PUBLIC        _delayms
   D:00D0H         PUBLIC        PSW
   -------         PROC          _DELAYMS
   D:0006H         SYMBOL        xms
@@ -156,51 +165,61 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   D:0006H         SYMBOL        i
   D:0004H         SYMBOL        j
   -------         ENDDO         
-  C:0558H         LINE#         13
-  C:0558H         LINE#         14
-  C:0558H         LINE#         16
-  C:0561H         LINE#         17
-  C:0575H         LINE#         18
+  C:04CDH         LINE#         16
+  C:04CDH         LINE#         17
+  C:04CDH         LINE#         19
+  C:04D6H         LINE#         20
+  C:04EAH         LINE#         21
   -------         ENDPROC       _DELAYMS
   -------         PROC          MAIN
-  C:0590H         LINE#         20
-  C:0590H         LINE#         21
-  C:0590H         LINE#         23
-  C:0597H         LINE#         24
-  C:059AH         LINE#         25
-  C:05A1H         LINE#         26
-  C:05A7H         LINE#         28
-  C:05A7H         LINE#         29
-  C:05A7H         LINE#         31
+  C:046EH         LINE#         23
+  C:046EH         LINE#         24
+  C:046EH         LINE#         25
+  C:0471H         LINE#         26
+  C:0478H         LINE#         27
+  C:047BH         LINE#         28
+  C:0482H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2017  11:07:58  PAGE 4
+
+
+  C:0482H         LINE#         30
+  C:0482H         LINE#         31
+  C:0489H         LINE#         32
+  C:0492H         LINE#         33
+  C:0492H         LINE#         35
+  C:0495H         LINE#         36
+  C:0497H         LINE#         38
+  C:0497H         LINE#         39
+  C:049EH         LINE#         40
+  C:04A0H         LINE#         42
+  C:04A0H         LINE#         43
   -------         ENDPROC       MAIN
   -------         PROC          TIM1FORWHEEL
-  C:04F8H         LINE#         34
-  C:0515H         LINE#         36
-  C:0517H         LINE#         37
-  C:051AH         LINE#         38
-  C:051CH         LINE#         39
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2017  17:46:33  PAGE 4
-
-
+  C:03F6H         LINE#         46
+  C:0413H         LINE#         48
+  C:0415H         LINE#         49
+  C:0418H         LINE#         50
+  C:041AH         LINE#         51
   -------         ENDPROC       TIM1FORWHEEL
   -------         PROC          TIM0FORANGLEMOTOR
-  C:00ECH         LINE#         41
-  C:0109H         LINE#         44
-  C:010BH         LINE#         45
-  C:010EH         LINE#         46
-  C:010EH         LINE#         47
-  C:0110H         LINE#         48
-  C:0112H         LINE#         49
-  C:0135H         LINE#         50
-  C:0147H         LINE#         53
-  C:0149H         LINE#         55
-  C:0149H         LINE#         56
-  C:014BH         LINE#         57
-  C:014DH         LINE#         58
-  C:0172H         LINE#         59
-  C:0199H         LINE#         62
-  C:0199H         LINE#         63
-  C:019BH         LINE#         64
+  C:0435H         LINE#         53
+  C:043EH         LINE#         55
+  C:0440H         LINE#         56
+  C:0443H         LINE#         57
+  C:0446H         LINE#         58
+  C:0453H         LINE#         59
+  C:0453H         LINE#         60
+  C:0455H         LINE#         61
+  C:0457H         LINE#         63
+  C:0457H         LINE#         64
+  C:0459H         LINE#         65
+  C:0459H         LINE#         66
+  C:045BH         LINE#         67
+  C:0462H         LINE#         68
+  C:0462H         LINE#         69
+  C:0465H         LINE#         70
+  C:0465H         LINE#         71
+  C:0467H         LINE#         72
   -------         ENDPROC       TIM0FORANGLEMOTOR
   -------         ENDMOD        MAIN
 
@@ -208,23 +227,26 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   B:0090H.1       PUBLIC        Lmotor
   D:0090H         PUBLIC        P1
-  C:027FH         PUBLIC        wheelMotorInterrupt
+  C:01B5H         PUBLIC        wheelMotorInterrupt
   D:00B0H         PUBLIC        P3
   B:00A8H.7       PUBLIC        EA
   B:0090H.0       PUBLIC        Rmotor
   D:00A8H         PUBLIC        IE
   B:0020H.0       PUBLIC        isPwmHigh
-  D:0017H         PUBLIC        rightPWM
-  C:01B6H         PUBLIC        _motorAction
+  D:0018H         PUBLIC        rightPWM
+  C:00ECH         PUBLIC        _motorAction
   D:00B8H         PUBLIC        IP
-  D:0019H         PUBLIC        leftPWM
+  D:001AH         PUBLIC        leftPWM
   B:0020H.1       PUBLIC        isMotorRun
   B:0020H.2       PUBLIC        motorFlag
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2017  11:07:58  PAGE 5
+
+
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
-  D:001BH         PUBLIC        step
-  C:05A9H         PUBLIC        initWheelMotor
+  D:001CH         PUBLIC        step
+  C:0505H         PUBLIC        initWheelMotor
   B:00A8H.1       PUBLIC        ET0
   B:00A8H.3       PUBLIC        ET1
   D:008DH         PUBLIC        TH1
@@ -232,104 +254,101 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   B:0088H.4       PUBLIC        TR0
   B:0088H.6       PUBLIC        TR1
   D:00C8H         PUBLIC        T2CON
-  C:0576H         PUBLIC        shutDownMotor
+  C:04EBH         PUBLIC        shutDownMotor
   D:00D0H         PUBLIC        PSW
   -------         PROC          INITWHEELMOTOR
-  C:05A9H         LINE#         12
-  C:05A9H         LINE#         13
-  C:05A9H         LINE#         14
-  C:05ACH         LINE#         15
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2017  17:46:33  PAGE 5
-
-
-  C:05AFH         LINE#         16
-  C:05B1H         LINE#         17
-  C:05B3H         LINE#         18
-  C:05B5H         LINE#         19
-  C:05B7H         LINE#         20
-  C:05B9H         LINE#         21
+  C:0505H         LINE#         12
+  C:0505H         LINE#         13
+  C:0505H         LINE#         14
+  C:0508H         LINE#         15
+  C:050BH         LINE#         16
+  C:050DH         LINE#         17
+  C:050FH         LINE#         18
+  C:0511H         LINE#         19
+  C:0513H         LINE#         20
+  C:0515H         LINE#         21
   -------         ENDPROC       INITWHEELMOTOR
   -------         PROC          SHUTDOWNMOTOR
-  C:0576H         LINE#         23
-  C:0576H         LINE#         24
-  C:0576H         LINE#         25
-  C:057CH         LINE#         26
-  C:0582H         LINE#         27
-  C:0584H         LINE#         28
-  C:0587H         LINE#         29
-  C:0589H         LINE#         30
-  C:058BH         LINE#         31
-  C:058DH         LINE#         32
-  C:058FH         LINE#         33
+  C:04EBH         LINE#         23
+  C:04EBH         LINE#         24
+  C:04EBH         LINE#         25
+  C:04F1H         LINE#         26
+  C:04F7H         LINE#         27
+  C:04F9H         LINE#         28
+  C:04FCH         LINE#         29
+  C:04FEH         LINE#         30
+  C:0500H         LINE#         31
+  C:0502H         LINE#         32
+  C:0504H         LINE#         33
   -------         ENDPROC       SHUTDOWNMOTOR
   -------         PROC          _MOTORACTION
   D:0007H         SYMBOL        pos
   D:0005H         SYMBOL        speed
-  C:01B6H         LINE#         35
-  C:01B6H         LINE#         36
-  C:01B6H         LINE#         37
-  C:01C4H         LINE#         38
-  C:01C4H         LINE#         39
-  C:01CCH         LINE#         40
-  C:01CCH         LINE#         41
-  C:01D4H         LINE#         42
-  C:01DCH         LINE#         43
-  C:01E2H         LINE#         44
-  C:01E2H         LINE#         45
-  C:0207H         LINE#         46
-  C:0207H         LINE#         47
-  C:0209H         LINE#         48
-  C:0218H         LINE#         49
-  C:0232H         LINE#         50
-  C:0245H         LINE#         51
-  C:0254H         LINE#         52
-  C:025FH         LINE#         53
-  C:0272H         LINE#         54
-  C:027EH         LINE#         55
-  C:027EH         LINE#         56
+  C:00ECH         LINE#         35
+  C:00ECH         LINE#         36
+  C:00ECH         LINE#         37
+  C:00FAH         LINE#         38
+  C:00FAH         LINE#         39
+  C:0102H         LINE#         40
+  C:0102H         LINE#         41
+  C:010AH         LINE#         42
+  C:0112H         LINE#         43
+  C:0118H         LINE#         44
+  C:0118H         LINE#         45
+  C:013DH         LINE#         46
+  C:013DH         LINE#         47
+  C:013FH         LINE#         48
+  C:014EH         LINE#         49
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2017  11:07:58  PAGE 6
+
+
+  C:0168H         LINE#         50
+  C:017BH         LINE#         51
+  C:018AH         LINE#         52
+  C:0195H         LINE#         53
+  C:01A8H         LINE#         54
+  C:01B4H         LINE#         55
+  C:01B4H         LINE#         56
   -------         ENDPROC       _MOTORACTION
   -------         PROC          WHEELMOTORINTERRUPT
-  C:027FH         LINE#         58
-  C:027FH         LINE#         59
-  C:027FH         LINE#         60
-  C:0282H         LINE#         61
-  C:0282H         LINE#         62
-  C:0285H         LINE#         63
-  C:0285H         LINE#         64
-  C:0287H         LINE#         65
-  C:0289H         LINE#         67
-  C:028DH         LINE#         68
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2017  17:46:33  PAGE 6
-
-
-  C:0290H         LINE#         70
-  C:0291H         LINE#         72
-  C:0291H         LINE#         73
-  C:0293H         LINE#         74
-  C:0295H         LINE#         76
-  C:02B9H         LINE#         77
-  C:02DFH         LINE#         78
-  C:02E1H         LINE#         79
-  C:02E3H         LINE#         80
-  C:02E3H         LINE#         81
-  C:02E4H         LINE#         83
-  C:02E4H         LINE#         84
-  C:02E7H         LINE#         85
-  C:02E7H         LINE#         86
-  C:02E9H         LINE#         87
-  C:02EBH         LINE#         89
-  C:02EFH         LINE#         90
-  C:02F2H         LINE#         92
-  C:02F3H         LINE#         94
-  C:02F3H         LINE#         95
-  C:02F5H         LINE#         96
-  C:02F7H         LINE#         98
-  C:031BH         LINE#         99
-  C:0341H         LINE#         100
-  C:0343H         LINE#         101
-  C:0345H         LINE#         102
-  C:0345H         LINE#         103
-  C:0345H         LINE#         104
+  C:01B5H         LINE#         58
+  C:01B5H         LINE#         59
+  C:01B5H         LINE#         60
+  C:01B8H         LINE#         61
+  C:01B8H         LINE#         62
+  C:01BBH         LINE#         63
+  C:01BBH         LINE#         64
+  C:01BDH         LINE#         65
+  C:01BFH         LINE#         67
+  C:01C3H         LINE#         68
+  C:01C6H         LINE#         70
+  C:01C7H         LINE#         72
+  C:01C7H         LINE#         73
+  C:01C9H         LINE#         74
+  C:01CBH         LINE#         76
+  C:01EFH         LINE#         77
+  C:0215H         LINE#         78
+  C:0217H         LINE#         79
+  C:0219H         LINE#         80
+  C:0219H         LINE#         81
+  C:021AH         LINE#         83
+  C:021AH         LINE#         84
+  C:021DH         LINE#         85
+  C:021DH         LINE#         86
+  C:021FH         LINE#         87
+  C:0221H         LINE#         89
+  C:0225H         LINE#         90
+  C:0228H         LINE#         92
+  C:0229H         LINE#         94
+  C:0229H         LINE#         95
+  C:022BH         LINE#         96
+  C:022DH         LINE#         98
+  C:0251H         LINE#         99
+  C:0277H         LINE#         100
+  C:0279H         LINE#         101
+  C:027BH         LINE#         102
+  C:027BH         LINE#         103
+  C:027BH         LINE#         104
   -------         ENDPROC       WHEELMOTORINTERRUPT
   -------         ENDMOD        MOTOR
 
@@ -339,7 +358,10 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
-  C:03D2H         PUBLIC        trace
+  C:0360H         PUBLIC        trace
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2017  11:07:58  PAGE 7
+
+
   D:00B8H         PUBLIC        IP
   B:0080H.6       PUBLIC        qtiL
   B:0080H.3       PUBLIC        qtiR
@@ -350,27 +372,24 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   B:0080H.4       PUBLIC        qtiMR
   D:00D0H         PUBLIC        PSW
   -------         PROC          TRACE
-  C:03D2H         LINE#         6
-  C:03D2H         LINE#         7
-  C:03D2H         LINE#         8
-  C:03D8H         LINE#         9
-  C:03D8H         LINE#         10
-  C:03E0H         LINE#         11
-  C:03E2H         LINE#         12
-  C:03E8H         LINE#         13
-  C:03EEH         LINE#         15
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2017  17:46:33  PAGE 7
-
-
-  C:03F2H         LINE#         16
-  C:03F4H         LINE#         18
-  C:03F4H         LINE#         19
-  C:040AH         LINE#         20
-  C:0410H         LINE#         21
-  C:0416H         LINE#         22
-  C:041CH         LINE#         24
-  C:0423H         LINE#         25
-  C:0423H         LINE#         26
+  C:0360H         LINE#         6
+  C:0360H         LINE#         7
+  C:0360H         LINE#         8
+  C:0366H         LINE#         9
+  C:0366H         LINE#         10
+  C:036EH         LINE#         11
+  C:0370H         LINE#         12
+  C:0376H         LINE#         13
+  C:037CH         LINE#         15
+  C:0380H         LINE#         16
+  C:0382H         LINE#         18
+  C:0382H         LINE#         19
+  C:0398H         LINE#         20
+  C:039EH         LINE#         21
+  C:03A4H         LINE#         22
+  C:03AAH         LINE#         24
+  C:03B1H         LINE#         25
+  C:03B1H         LINE#         26
   -------         ENDPROC       TRACE
   -------         ENDMOD        TRACE
 
@@ -380,72 +399,63 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
   B:00A8H.7       PUBLIC        EA
-  C:04B5H         PUBLIC        checkFire
+  C:0308H         PUBLIC        checkFire
   D:00A8H         PUBLIC        IE
   D:000DH         PUBLIC        fireSensorAngle
   D:00B8H         PUBLIC        IP
-  B:0090H.2       PUBLIC        angleMotor
+  D:0017H         PUBLIC        fireFlag
   D:00A0H         PUBLIC        fireSensor
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
   C:000EH         PUBLIC        initAngleMotor
   B:00A8H.1       PUBLIC        ET0
-  D:008CH         PUBLIC        TH0
-  D:008AH         PUBLIC        TL0
   B:0088H.4       PUBLIC        TR0
   D:00C8H         PUBLIC        T2CON
-  C:0424H         PUBLIC        _angleMotorInterrupt
   D:00D0H         PUBLIC        PSW
   -------         PROC          CHECKFIRE
   -------         DO            
   D:0008H         SYMBOL        fire
-  D:0006H         SYMBOL        i
-  D:0004H         SYMBOL        angle
-  D:0007H         SYMBOL        fs
+  D:0021H         SYMBOL        i
+  D:0022H         SYMBOL        angle
+  D:0024H         SYMBOL        fs
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2017  11:07:58  PAGE 8
+
+
   -------         ENDDO         
-  C:04B5H         LINE#         15
-  C:04B5H         LINE#         16
-  C:04B5H         LINE#         21
-  C:04B7H         LINE#         22
-  C:04B9H         LINE#         23
-  C:04B9H         LINE#         24
-  C:04DAH         LINE#         25
-  C:04E1H         LINE#         26
-  C:04E1H         LINE#         27
-  C:04EBH         LINE#         28
-  C:04EFH         LINE#         29
-  C:04EFH         LINE#         30
-  C:04F3H         LINE#         31
-  C:04F7H         LINE#         32
+  C:0308H         LINE#         21
+  C:0308H         LINE#         22
+  C:0308H         LINE#         27
+  C:030BH         LINE#         28
+  C:030EH         LINE#         29
+  C:0311H         LINE#         30
+  C:0311H         LINE#         31
+  C:0329H         LINE#         32
+  C:0331H         LINE#         33
+  C:0331H         LINE#         34
+  C:033FH         LINE#         35
+  C:0342H         LINE#         36
+  C:0348H         LINE#         37
+  C:034DH         LINE#         38
+  C:034DH         LINE#         39
+  C:0358H         LINE#         40
+  C:035BH         LINE#         41
+  C:035FH         LINE#         42
   -------         ENDPROC       CHECKFIRE
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2017  17:46:33  PAGE 8
-
-
   -------         PROC          INITANGLEMOTOR
-  C:000EH         LINE#         34
-  C:000EH         LINE#         35
-  C:000EH         LINE#         36
-  C:0011H         LINE#         37
-  C:0014H         LINE#         38
-  C:0016H         LINE#         39
-  C:0018H         LINE#         40
-  C:001AH         LINE#         41
+  C:000EH         LINE#         44
+  C:000EH         LINE#         45
+  C:000EH         LINE#         46
+  C:0011H         LINE#         47
+  C:0014H         LINE#         48
+  C:0016H         LINE#         49
+  C:0018H         LINE#         50
+  C:001AH         LINE#         51
   -------         ENDPROC       INITANGLEMOTOR
-  -------         PROC          _ANGLEMOTORINTERRUPT
-  D:0021H         SYMBOL        pwmWidth
-  B:0020H.4       SYMBOL        pinState
-  C:0424H         LINE#         44
-  C:0428H         LINE#         45
-  C:0428H         LINE#         46
-  C:042CH         LINE#         47
-  C:044BH         LINE#         48
-  C:0470H         LINE#         49
-  -------         ENDPROC       _ANGLEMOTORINTERRUPT
   -------         ENDMOD        FIRESENSOR
 
   -------         MODULE        ?C?SLDIV
-  C:0471H         PUBLIC        ?C?SLDIV
+  C:03B2H         PUBLIC        ?C?SLDIV
   -------         ENDMOD        ?C?SLDIV
 
   -------         MODULE        ?C?ULDIV
@@ -453,19 +463,7 @@ SYMBOL TABLE OF MODULE:  .\hex\FireRobot (?C_STARTUP)
   -------         ENDMOD        ?C?ULDIV
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?INITWHEELMOTOR?MOTOR
-
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?SHUTDOWNMOTOR?MOTOR
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TRACE?TRACE
-
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CHECKFIRE?FIRESENSOR
-
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ANGLEMOTORINTERRUPT?FIRESENSOR
-
-Program Size: data=34.5 xdata=0 code=1458
-LINK/LOCATE RUN COMPLETE.  5 WARNING(S),  0 ERROR(S)
+Program Size: data=38.4 xdata=0 code=1294
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

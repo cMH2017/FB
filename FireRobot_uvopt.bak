@@ -134,6 +134,96 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
+          <LineNumber>57</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>firesensor.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>55</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>firesensor.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>49</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>reg52.h</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
+          <LineNumber>33</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
+          <LineNumber>35</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>5</Number>
+          <Type>0</Type>
+          <LineNumber>61</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>6</Number>
+          <Type>0</Type>
           <LineNumber>3</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
@@ -147,7 +237,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>1</Number>
+          <Number>7</Number>
           <Type>0</Type>
           <LineNumber>18</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -162,7 +252,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>2</Number>
+          <Number>8</Number>
           <Type>0</Type>
           <LineNumber>9</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -177,7 +267,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>3</Number>
+          <Number>9</Number>
           <Type>0</Type>
           <LineNumber>20</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -188,21 +278,6 @@
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
           <Filename>MOTOR.H</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>11</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>main.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
@@ -263,10 +338,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>40</ColumnNumber>
+      <ColumnNumber>19</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>22</CurrentLine>
+      <TopLine>42</TopLine>
+      <CurrentLine>71</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -284,10 +359,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>12</ColumnNumber>
+      <ColumnNumber>64</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>76</TopLine>
+      <CurrentLine>99</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\motor\motor.c</PathWithFileName>
       <FilenameWithoutPath>motor.c</FilenameWithoutPath>
@@ -333,10 +408,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>45</ColumnNumber>
+      <ColumnNumber>5</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>10</CurrentLine>
+      <CurrentLine>26</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\trace\trace.c</PathWithFileName>
       <FilenameWithoutPath>trace.c</FilenameWithoutPath>
@@ -345,7 +420,7 @@
 
   <Group>
     <GroupName>firesensor</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
@@ -354,10 +429,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>25</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>2</TopLine>
-      <CurrentLine>13</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>10</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\fireSensor\firesensor.c</PathWithFileName>
       <FilenameWithoutPath>firesensor.c</FilenameWithoutPath>
@@ -379,9 +454,9 @@
   </Group>
 
   <AlienFiles>
-    <PathWithFilename>D:\KEIL_C51\C51\INC\REG52.H</PathWithFilename>
-    <TopLine>13</TopLine>
-    <CurrentLine>20</CurrentLine>
+    <PathWithFilename>D:\Keil_C51\C51\INC\reg52.h</PathWithFilename>
+    <TopLine>6</TopLine>
+    <CurrentLine>6</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -1744,50 +1819,44 @@
     <Orientation>3</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
-      <Size>55</Size>
-      <ActiveTab>0</ActiveTab>
+      <Size>65</Size>
+      <ActiveTab>1</ActiveTab>
       <Documents>
         <Doc>
+          <Name>.\main.c</Name>
+          <ColumnNumber>19</ColumnNumber>
+          <TopLine>42</TopLine>
+          <CurrentLine>71</CurrentLine>
+        </Doc>
+        <Doc>
           <Name>.\fireSensor\firesensor.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>2</TopLine>
-          <CurrentLine>13</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>D:\KEIL_C51\C51\INC\REG52.H</Name>
-          <ColumnNumber>6</ColumnNumber>
-          <TopLine>13</TopLine>
-          <CurrentLine>20</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\trace\trace.c</Name>
-          <ColumnNumber>45</ColumnNumber>
+          <ColumnNumber>25</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>10</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\main.c</Name>
-          <ColumnNumber>40</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>22</CurrentLine>
+          <Name>D:\KEIL_C51\C51\INC\REG52.H</Name>
+          <ColumnNumber>58</ColumnNumber>
+          <TopLine>6</TopLine>
+          <CurrentLine>6</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\motor\motor.c</Name>
+          <ColumnNumber>64</ColumnNumber>
+          <TopLine>76</TopLine>
+          <CurrentLine>99</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
     <MDIGroup>
-      <Size>45</Size>
+      <Size>35</Size>
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\FIRESENSOR\FIRESENSOR.H</Name>
-          <ColumnNumber>18</ColumnNumber>
+          <ColumnNumber>17</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>5</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\motor\motor.c</Name>
-          <ColumnNumber>12</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <CurrentLine>10</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

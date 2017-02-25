@@ -2,14 +2,16 @@
 #include "motor.h"
 #include "trace.h"
 #include "firesensor.h"
-
-#define NUM 1
-int angle;
-bit pwmFlag=0;
+int  angle=0;
+bit  pwmFlag=0;
 sbit beep=P2^3;
 sbit angleMotor=P1^2;
+sbit fan=P2^5;				//连接继电器的引脚，控制风扇
+uchar angleMotorCount=0;
 
 extern uint fireSensorAngle[5];
+extern char fireFlag;
+
 void delayms(uint xms)
 {
  uint i,j;
@@ -19,19 +21,28 @@ void delayms(uint xms)
 
 void main(void)		
 {
-	//initWheelMotor();
+	initWheelMotor();
 	delayms(2);
 	initAngleMotor();
 	delayms(2);
-	angle=fireSensorAngle[0];
-	
 	while(1)
 	{
-	 //trace();
+		angle=checkFire();			//传回度数
+		if(fireFlag<0)
+		{
+			fan=0;					//关闭继电器
+			trace();				//如果没有火焰就循迹
+		}
+		else						//有火焰就灭火
+		{
+			delayms(10);			//防止误测
+			if(fireFlag)
+				fan=1;				//打开继电器	
+		}
 	}
 }
 
-void Tim1forWheel(void) interrupt 3			//两个轮子
+void Tim1forWheel(void) interrupt 3				//两个轮子
 {
  	EA=0;
 	wheelMotorInterrupt();
@@ -40,25 +51,15 @@ void Tim1forWheel(void) interrupt 3			//两个轮子
 
 void Tim0forAngleMotor(void) interrupt 1
 {
- 	
-	EA=0;
-	if(pwmFlag)
-	{
-		pwmFlag=0;
-		angleMotor=1;
-		TH0=(65536-(fireSensorAngle[NUM]))/256;			//高电平时间
-		TL0=(65526-(fireSensorAngle[NUM]))%256;
-		//angleMotorInterrupt(angle,pwmFlag);
-		//beep=pwmFlag=0;
-	}
+	TR0=0;
+	TH0=(65536-100)/256;
+	TL0=(65536-100)%256;
+	if(angle>angleMotorCount)				  //18,最左，3最右
+	 	 angleMotor=1; 	
 	else
-	{
-		pwmFlag=1;
-		angleMotor=0;
-		TH0=(65536-(18349+fireSensorAngle[NUM]))/256; 	//低电平时间
-		TL0=(65536-(18349+fireSensorAngle[NUM]))%256;
-		//angleMotorInterrupt(18349-angle,pwmFlag);	 		//18349是20ms		
-		//beep=pwmFlag=1;
-	}
-	EA=1;
+	 	angleMotor=0;
+	angleMotorCount++;
+	if(angleMotorCount>=200)
+	 	angleMotorCount=0;
+	TR0=1;
 }

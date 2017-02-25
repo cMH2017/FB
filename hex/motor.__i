@@ -1,0 +1,1 @@
+"motor\motor.c" BROWSE INCDIR(.\motor;.\trace;.\fireSensor) DEBUG OBJECTEXTEND PRINT(.\motor.lst) OBJECT(.\hex\motor.obj)
